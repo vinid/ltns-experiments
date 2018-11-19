@@ -8,6 +8,9 @@ Each experiment has its own folder and the experiment can be run independently.
 In the relative folder you will find a `xx_run_reasoning.py` file that will allow you to run
 multiple experiments over a set of hyper-parameters.
 
+The code in `utils.evaluation_utilities.compute_all_values` gives you the possibility of computing performance metrix over the dataset (it is mainly a
+wrapper around some sklearn functions)
+
 ## Gold Standard
 
 Inside the *experiments* folder you will find the *gold_standard* folder that contains the transitive closure for 
@@ -21,7 +24,7 @@ the different KB used in this project:
 
 ## Experiment 1: Taxonomy Reasoning
 
-The KB is roghly inspired to the [DBpedia Ontology](http://mappings.dbpedia.org/server/ontology/classes/)
+The KB is inspired to the [DBpedia Ontology](http://mappings.dbpedia.org/server/ontology/classes/)
 
 ## Experiment 2: Ancestor Reasoning
 
@@ -29,7 +32,14 @@ The KB is taken from an example that can be found in the following set of [slide
 
 ## Experiment 3: LTNs vs Multi-input Networks
 
+In the multi-input folder you will find the `madnn.py` that can be used to run the multi-input network over the dataset. You can create random new datasets 
+by decommenting some lines in the file. You can run the LTNs by calling the respective function defined in that file. This will generate two file with the predictions
+that can be used within the `evaluate.py` script.
+
 ## Experiment 4: Time to Learn
+
+Everything needed to generate the predicates and the contstants can be found in the performance folder. The script that gets the parameter can be modified to generatate predicates with 
+arity that range from 1 to 3.
 
 # Project Structure
 <pre>

@@ -186,17 +186,17 @@ def madnn():
     prop_vocabulary_size = 2
 
     entity_one_input = Input(shape=(entity_vocabulary_size,))
-    entity_one_first_step = layers.Dense(2,kernel_regularizer=regularizers.l2(0.01))(entity_one_input)
+    entity_one_first_step = layers.Dense(5,kernel_regularizer=regularizers.l2(0.01))(entity_one_input)
 
     entity_two_input = Input(shape=(entity_vocabulary_size,))
-    entity_two_first_step = layers.Dense(2 ,kernel_regularizer=regularizers.l2(0.01))(entity_two_input)
+    entity_two_first_step = layers.Dense(5 ,kernel_regularizer=regularizers.l2(0.01))(entity_two_input)
 
     property_input = Input(shape=(prop_vocabulary_size,))
     encoded_property = layers.Dense(2, kernel_regularizer=regularizers.l2(0.01))(property_input)
 
     concatenated = layers.concatenate([entity_one_first_step, encoded_property, entity_two_first_step], axis=-1)
 
-    belta = layers.Dense(3, activation='sigmoid', kernel_regularizer=regularizers.l2(0.01))(concatenated)
+    belta = layers.Dense(3, kernel_regularizer=regularizers.l2(0.01))(concatenated)
     answer = layers.Dense(1, activation='sigmoid', kernel_regularizer=regularizers.l2(0.01))(belta)
 
     model = Model([entity_one_input, entity_two_input,property_input], answer)

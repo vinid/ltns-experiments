@@ -44,7 +44,7 @@ tuples_file_scores = []
 onlyfiles = filter(lambda x : "pa" not in x, onlyfiles)
 
 for item in onlyfiles:
-    scores = (evaluation_utilities.compute_all_values(closure, file_dir + item, parents, False))
+    scores = (evaluation_utilities.compute_all_values(closure, file_dir + item, parents, True))
     tuples_file_scores.append((item, scores))
 
 pprint.pprint(sorted(tuples_file_scores, key=lambda x: x[1]["f1"], reverse=True)[0])

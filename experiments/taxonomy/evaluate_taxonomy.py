@@ -29,7 +29,7 @@ onlyfiles = [f for f in listdir(file_dir) if isfile(join(file_dir, f))]
 tuples_file_scores = []
 
 for item in onlyfiles:
-    scores = (evaluation_utilities.compute_all_values(closure, file_dir + item, relationships, False))
+    scores = (evaluation_utilities.compute_all_values(closure, file_dir + item, relationships, True))
     tuples_file_scores.append((item, scores))
 
 pprint.pprint(sorted(tuples_file_scores, key=lambda x: x[1]["f1"], reverse=True)[0])
