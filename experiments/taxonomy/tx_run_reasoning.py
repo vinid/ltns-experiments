@@ -16,7 +16,7 @@ current = 0
 for lr, dc, ly, em, bi, uv in data_pairs:
     cwd = os.getcwd()
     for iter in range(1, 5):
-        print current, "on", max_iter*4
+        print(current, "on", max_iter*4)
         current = current + 1
         os.system("python " + cwd + "/taxonomy_reasoning.py -lr " + str(lr) + " -dc " + str(dc) + " -ly  " \
                   + str(ly) + " -em " + str(em) + " -bi " + str(bi) + " -iter " + str(iter) + " -univ " + str(uv))

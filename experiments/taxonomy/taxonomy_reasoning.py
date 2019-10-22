@@ -87,7 +87,8 @@ if __name__ == "__main__":
 
     print(sat_level)
 
-    file_name = "tx_lr:" + str(lr) + "dc:" + str(dc) + "_em:" + str(embedding_size) + "_ly:" + str(ly) + "_bi:" + str(bi) + "_iter:" + str(iter_epoch) + "_univ:" + str(args.univ) + "_sat:" + np.array_str(sat_level)
+    # file_name = "tx_lr:" + str(lr) + "dc:" + str(dc) + "_em:" + str(embedding_size) + "_ly:" + str(ly) + "_bi:" + str(bi) + "_iter:" + str(iter_epoch) + "_univ:" + str(args.univ) + "_sat:" + np.array_str(sat_level)
+    file_name = "tx_lr:" + str(lr) + "dc:" + str(dc) + "_em:" + str(embedding_size) + "_ly:" + str(ly) + "_bi:" + str(bi) + "_iter:" + str(iter_epoch) + "_univ:" + str(args.univ) + "_sat:" + str(sat_level)
     with open(folder_name + file_name, "w") as resutls_file:
         resutls_file.write(str(sat_level) + "\n")
         logging.info("Inference Over Taxonomy")
